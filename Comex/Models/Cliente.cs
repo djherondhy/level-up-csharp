@@ -1,16 +1,8 @@
-﻿/*
-Crie a classe Cliente com seus respectivos atributos:
+﻿namespace Comex.Models;
+internal class Cliente: IIdentificacao{
 
-Nome (Texto)
-CPF (Texto)
-E-mail (Texto)
-Profissão (Texto).
-Telefone (Texto)
-Endereço (Endereco)
- */
-class Cliente {
-
-    public Cliente(string nome) {
+    public Cliente(string nome)
+    {
         Nome = nome;
     }
     public string Nome { get; set; }
@@ -19,4 +11,5 @@ class Cliente {
     public string Telefone { get; set; }
     public Endereco Endereco { get; set; }
 
+    public string Identificacao => $"Nome: {Nome} | CPF: {CPF}";
 }

@@ -1,17 +1,5 @@
-﻿/* 
-
-Crie a classe Endereco com seus respectivos atributos:
-
-Bairro (Texto)
-Cidade (Texto)
-Complemento (Texto)
-Estado (Texto).
-Rua (Texto)
-Número (número)
-
-
- */
-class Endereco {
+﻿namespace Comex.Models;
+internal class Endereco {
     public string Bairro { get; set; }
     public string Cidade { get; set; }
     public string Complemento { get; set; }
