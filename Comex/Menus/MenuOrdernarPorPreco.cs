@@ -3,7 +3,7 @@
 using Comex.Models;
 
 namespace Comex.Menus; 
-internal class MenuOrdenarPorPreco:Menu {
+internal class MenuOrdernarPorPreco:Menu {
 
     public override void Executar(List<Produto> produtos) {
         base.Executar(produtos);
@@ -11,7 +11,12 @@ internal class MenuOrdenarPorPreco:Menu {
         base.Executar(produtos);
         ExibirTitulo("Produtos Ordenados por Preço");
 
-        var produtosOrdenadosPorPreco = produtos.OrderBy(p => p.PrecoUnitario);
+        
+
+        var produtosOrdenadosPorPreco =
+            from produto in produtos
+            orderby produto.PrecoUnitario ascending
+            select produto;
 
         foreach (var produto in produtosOrdenadosPorPreco) {
             Console.WriteLine($"Nome: {produto.Nome}, Preço: R$ {produto.PrecoUnitario}");

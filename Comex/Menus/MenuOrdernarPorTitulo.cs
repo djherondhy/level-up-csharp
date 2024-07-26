@@ -7,7 +7,10 @@ internal class MenuOrdernarPorTitulo:Menu {
         base.Executar(produtos);
         ExibirTitulo("Produtos Ordenados por Titulo");
 
-        var produtosOrdenadosPorNome = produtos.OrderBy(p => p.Nome);
+        var produtosOrdenadosPorNome =
+            from produto in produtos
+            orderby produto.Nome ascending
+            select produto;
 
         foreach (var produto in produtosOrdenadosPorNome) {
             Console.WriteLine($"Nome: {produto.Nome}, Preço: R$ {produto.PrecoUnitario}");
