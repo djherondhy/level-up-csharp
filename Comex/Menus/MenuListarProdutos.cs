@@ -13,5 +13,9 @@ internal class MenuListarProdutos: Menu {
         foreach (var produto in produtos) {
             Console.WriteLine(produto.Descricao);
         }
+
+        Console.WriteLine("Pressione qualquer tecla para voltar ao menu!");
+        Console.ReadKey();
+        Console.Clear();
     }
 }
