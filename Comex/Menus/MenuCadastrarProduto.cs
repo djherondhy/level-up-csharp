@@ -23,8 +23,9 @@ internal class MenuCadastrarProduto: Menu {
         int quantidadeConvertida = int.Parse(quantidade);
 
 
-        Produto produto = new Produto(nomeProduto, precoConvertido) {
-            Quantidade = quantidadeConvertida
+        Produto produto = new Produto(nomeProduto) {
+            Quantidade = quantidadeConvertida,
+            PrecoUnitario = precoConvertido
         };
 
         produtos.Add(produto);

@@ -1,6 +1,6 @@
 ﻿namespace Comex.Models;
 internal class ProdutoLivro : Produto, IIdentificacao{
-    public ProdutoLivro(string nome, double preco) : base(nome, preco) {
+    public ProdutoLivro(string nome, double preco) : base(nome) {
     }
 
     string Isbn { get; set; }
