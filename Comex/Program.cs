@@ -1,9 +1,10 @@
 ﻿using Comex.Menus;
 using Comex.Models;
 using System.Net;
+using System.Text.Json;
 
-internal class Program {
-    private static void Main(string[] args) {
+
+   
         string mensagemBoasVindas = "Sejam Bem Vindos ao Comex";
         List<Produto> produtos = new List<Produto>();
         Dictionary<int, Menu> opcoes = new();
@@ -13,7 +14,8 @@ internal class Program {
         opcoes.Add(4, new MenuOrdernarPorPreco());
 
 
-        void ExibirMenu() {
+
+        async Task ExibirMenu() {
 
             Console.WriteLine(@"
 ░█████╗░░█████╗░███╗░░░███╗███████╗██╗░░██╗
@@ -28,15 +30,23 @@ internal class Program {
             Console.WriteLine("2 - Listar Produtos.");
             Console.WriteLine("3 - Ordernar Produtos por Titulo.");
             Console.WriteLine("4 - Ordernar Produtos por Preço.");
+            Console.WriteLine("5 - Consultar Produtos de API Externa.");
             Console.WriteLine("-1 - Sair.");
             Console.Write("\nDigite a opção desejada: ");
             string opcaoEscolhida = Console.ReadLine()!;
             int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
 
             if(opcaoEscolhidaNumerica > 0) {
-                Menu menu = opcoes[opcaoEscolhidaNumerica];
-                menu.Executar(produtos);
-                ExibirMenu();
+
+                if(opcaoEscolhidaNumerica == 5) {
+                    await new MenuConsultarAPI().Executar();
+                }
+                else {
+                    Menu menu = opcoes[opcaoEscolhidaNumerica];
+                    menu.Executar(produtos);
+                    await ExibirMenu();
+                }
+               
             }
             else {
                 Console.WriteLine("Tchau!");
@@ -44,6 +54,8 @@ internal class Program {
            
         }
 
-        ExibirMenu();
-    }
-}
+       await ExibirMenu();
+
+         
+
+

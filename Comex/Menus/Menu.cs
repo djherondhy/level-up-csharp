@@ -17,4 +17,10 @@ internal class Menu {
        Console.Clear();
                        
     }
+
+    public void FinalizarOperacao() {
+         Console.WriteLine("Pressione qualquer tecla para voltar ao menu!");
+        Console.ReadKey();
+        Console.Clear();
+    }
 }

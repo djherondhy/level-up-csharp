@@ -22,9 +22,7 @@ internal class MenuOrdernarPorPreco:Menu {
             Console.WriteLine($"Nome: {produto.Nome}, Preço: R$ {produto.PrecoUnitario}");
         }
 
-        Console.WriteLine("Pressione qualquer tecla para voltar ao menu!");
-        Console.ReadKey();
-        Console.Clear();
+       
     }
 
 }
