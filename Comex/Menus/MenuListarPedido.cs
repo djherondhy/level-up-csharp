@@ -14,7 +14,8 @@ internal class MenuListarPedido:Menu {
         Random random = new Random();
 
         ExibirTitulo("Listar Pedidos");
-        foreach(var pedidos in Pedidos) {
+        var pedidosOrdenados = Pedidos.OrderBy(p => p.Cliente.Nome);
+        foreach(var pedidos in pedidosOrdenados) {
             pedidos.detalharPedido();
         }
 

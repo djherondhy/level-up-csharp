@@ -26,7 +26,9 @@ List<Cliente> clientes = new() {
    new Cliente("Eduarda"){CPF = "000.000.000-02"}
 };
 List<Pedido> pedidos = new() {
+    new Pedido(clientes[1]){Numero = 1001, Data = DateTime.Now},
     new Pedido(clientes[0]){Numero = 1000, Data = DateTime.Now}
+    
 };
 
 
