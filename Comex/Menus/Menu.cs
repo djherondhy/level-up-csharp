@@ -19,7 +19,7 @@ internal class Menu {
     }
 
     public void FinalizarOperacao() {
-         Console.WriteLine("Pressione qualquer tecla para voltar ao menu!");
+        Console.WriteLine("Pressione qualquer tecla para voltar ao menu!");
         Console.ReadKey();
         Console.Clear();
     }

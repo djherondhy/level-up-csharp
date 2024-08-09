@@ -7,6 +7,7 @@ internal class MenuConsultarAPI : Menu {
     public async Task Executar() {
         using HttpClient client = new HttpClient();
 
+       Console.Clear();
         ExibirTitulo("Exibindo Produtos");
 
         try {
