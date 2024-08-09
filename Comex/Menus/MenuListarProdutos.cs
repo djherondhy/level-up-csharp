@@ -11,11 +11,9 @@ internal class MenuListarProdutos: Menu {
         ExibirTitulo("Lista de Produtos");
 
         foreach (var produto in produtos) {
-            Console.WriteLine(produto.Descricao);
+            Console.WriteLine($"# {produto.Nome}  \n- Preço:  R$ {produto.PrecoUnitario} \n");
         }
 
-        Console.WriteLine("Pressione qualquer tecla para voltar ao menu!");
-        Console.ReadKey();
-        Console.Clear();
+        FinalizarOperacao();
     }
 }
