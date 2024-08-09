@@ -11,7 +11,7 @@ internal class Pedido {
     public Cliente Cliente { get; set; }
     public List<ItemDePedido> Items = new ();
     public DateTime Data { get; set; }
-    public double Total { get; set; }
+    public decimal Total => Items.Sum(i => i.Quantidade) * Items.Sum(i => i.PrecoUnitario);
 
     public Pedido(Cliente cliente) {
         Cliente = cliente;
@@ -30,4 +30,11 @@ internal class Pedido {
         Console.WriteLine($"-------------------------------------------------");
     }
 
+    public void detalharItemsDoPedido() {
+        detalharPedido();
+        Console.WriteLine("Items:");
+        foreach (var item in Items) {
+            item.DetalharItem();
+        }
+    }
 }

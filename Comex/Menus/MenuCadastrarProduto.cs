@@ -15,8 +15,8 @@ internal class MenuCadastrarProduto: Menu {
 
         Console.Write("Digite o Preço Unitário: ");
         string preco = Console.ReadLine()!;
-        double precoConvertido;
-        double.TryParse(preco, out precoConvertido);
+        decimal precoConvertido;
+        decimal.TryParse(preco, out precoConvertido);
 
         Console.Write("Digite a Quantidade em Estoque: ");
         string quantidade = Console.ReadLine()!;

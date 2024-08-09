@@ -13,7 +13,7 @@ internal class MenuListarPedido:Menu {
 
         Random random = new Random();
 
-        ExibirTitulo("Listar Pedido");
+        ExibirTitulo("Listar Pedidos");
         foreach(var pedidos in Pedidos) {
             pedidos.detalharPedido();
         }
