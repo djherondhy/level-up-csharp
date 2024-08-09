@@ -11,8 +11,8 @@ internal class Pedido {
     public Cliente Cliente { get; set; }
     public List<ItemDePedido> Items = new ();
     public DateTime Data { get; set; }
-    public decimal Total => Items.Sum(i => i.Quantidade) * Items.Sum(i => i.PrecoUnitario);
-
+    public decimal Total => Items.Sum(i => i.Subtotal);
+                                                        
     public Pedido(Cliente cliente) {
         Cliente = cliente;
     }
